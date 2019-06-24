@@ -7,7 +7,8 @@
 
 ## DECORATORS ##
 
-
+# from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 from enum import Enum
 
 
@@ -69,8 +70,8 @@ class Size(Enum):
     LARGE = 3
 
 
-for color in Color:
-    print(f'{color.name} : {color.value}')
+# for color in Color:
+#     print(f'{color.name} : {color.value}')
 
 
 def Test():
@@ -84,3 +85,24 @@ print(next(a))
 print(next(a))
 for i in a:
     print(i)
+
+
+
+
+class Test(ABC):
+    @abstractmethod
+    def print_in(self):
+        print('Inside print_in')
+
+    @abstractmethod
+    def print_out(self):
+        print('Inside print_out')
+
+class Implement(Test):
+    def print_in(self):
+        print('Inside Implement print_in')
+
+obj = Implement()
+obj.print_in()
+
+
