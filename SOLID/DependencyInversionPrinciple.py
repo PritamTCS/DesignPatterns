@@ -68,3 +68,79 @@ relationships.add_parent_and_child(parent, child2)
 
 
 Research(relationships)
+
+
+#####################################################
+
+class Manager(object):
+    def __init__(self):
+        self.developers = []
+        self.testers = []
+        self.designers = []
+
+    def addDevelopers(self, dev):
+        self.developers.append(dev)
+
+    def addDesigners(self, designer):
+        self.designers.append(designer)
+
+    def addTester(self, tester):
+        self.testers.append(tester)
+
+
+class Developer(object):
+    def __init__(self):
+        print("Developer added")
+
+
+class Designer(object):
+    def __init__(self):
+        print("Designer added")
+
+
+class Tester(object):
+    def __init__(self):
+        print("Tester added")
+
+
+if __name__ == "__main__":
+    obj = Manager()
+    obj.addDevelopers(Developer())
+    obj.addDesigners(Designer())
+    obj.addTester(Tester())
+
+
+#################### Using Abstraction #######################
+
+class Employee(object):
+    def work(self):
+        pass
+
+
+class Manager1(object):
+    def __init__(self):
+        self.employees = []
+
+    def addEmp(self, emp):
+        self.employees.append(emp)
+
+
+class Developer1(Employee):
+    def __init__(self):
+        print("Developer added")
+
+
+class Designer1(Employee):
+    def __init__(self):
+        print("Designer added")
+
+
+class Tester1(Employee):
+    def __init__(self):
+        print("Tester added")
+
+
+objM = Manager1()
+objM.addEmp(Developer1())
+objM.addEmp(Designer1())
+objM.addEmp(Tester1())
