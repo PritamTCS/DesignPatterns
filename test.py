@@ -87,22 +87,31 @@ for i in a:
     print(i)
 
 
-
-
-class Test(ABC):
+class Test():
     @abstractmethod
     def print_in(self):
-        print('Inside print_in')
+        print('Inside Test print_in')
 
-    @abstractmethod
-    def print_out(self):
-        print('Inside print_out')
 
-class Implement(Test):
-    def print_in(self):
-        print('Inside Implement print_in')
+class Test1(Test):
+    def out(self):
+        print("Test1 out")
 
-obj = Implement()
+
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+
+obj = Test()
 obj.print_in()
 
+obj1 = Person('Pritam')
+print(obj1._name)
 
+lst = [(10, 20, 30), (55, 66, 77)]
+lst.append((22, 33, 99))
+print(lst)
+
+t1 = Test1()
+print(t1)
